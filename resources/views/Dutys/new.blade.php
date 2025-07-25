@@ -7,18 +7,15 @@
     @include("layouts.partials.alert")
     <div class="header-container">
         <h4 class="font-weight-bold">Yeni Görev Ekle</h4>
-        <a href="{{route("Duty.MyDutys")}}"class="btn btn-secondary float-end font-weight-bold " > <i class="fa fa-arrow-left"></i>  Ana Sayfa</a>
+        <a href="{{route("Duty.MyDutys")}}"class="btn btn-secondary float-end font-weight-bold " > <i class="fa fa-arrow-left"></i> Ana Sayfa</a>
     </div>
     <hr style="border: 1px solid white;">
-
     @include("layouts.partials.errors")
-
     <form action="{{route("Duty.store")}}" method="post" enctype="multipart/form-data">
-
         @csrf
         <div class="form-group {{$errors->has("name") ? "has-error" : "" }}">
             <label for="task-name">Görev Adı</label>
-            <input type="text" id="task-name" name="name" value="{{old("name",$entry->name)}}" required placeholder="Görev adını girin...">
+            <input type="text" id="task-name" name="name" value="{{old("name",$entry->name)}}" required placeholder="Görev adını gir...">
             @if($errors->has("name"))
                 <span class="help-block">
                     <strong>{{$erorrs->first("name")}}</strong>
@@ -27,7 +24,6 @@
         </div>
         <label for="task-desc">Açıklama</label>
         <textarea id="task-desc" name="comment" placeholder="Görev açıklaması yazın..." required value="{{old("name",$entry->comment)}}"></textarea>
-
         <div class="row mb-3">
             <div class="col-md-6">
                 <label>Teslim Tarihi</label>
@@ -50,7 +46,6 @@
                 @endif
             </div>
         </div>
-
         <div class="row mb-3">
             <div class="col-md-6">
                 <label>Marka</label>
@@ -69,7 +64,6 @@
                 </select>
             </div>
         </div>
-
         <div class="row mb-3">
             <div class="col-md-6">
                 <label>Önem Düzeyi</label>
@@ -110,16 +104,7 @@
             <input type="hidden" name="id" value="{{ $entry->id }}">
         @endif
     </form>
-
 </div>
-
-
-
-
-
-
-
-
 @endsection
 
 
