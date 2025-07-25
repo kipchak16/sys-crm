@@ -1,0 +1,42 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    .custom-dropzone {
+        border: 2px dashed #6c757d;
+        border-radius: 10px;
+        padding: 40px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        color: #6c757d;
+        background-color: #fdfdfd;
+        transition: all 0.3s;
+    }
+
+    .custom-dropzone:hover {
+        background-color: #f8f9fa;
+        border-color: #007bff;
+        color: #007bff;
+    }
+
+    .custom-dropzone.dragover {
+        background-color: #e9ecef;
+        border-color: #007bff;
+        color: #007bff;
+    }
+
+    .custom-dropzone p {
+        margin: 0;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
+}
+
